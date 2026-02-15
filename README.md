@@ -3,38 +3,45 @@
 
 ---
 
+## 📊 GitHub Statistics
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app" alt="Albert's GitHub stats" height="150" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Albert-ei-u&layout=compact&theme=tokyonight" alt="Top Langs" height="150" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Albert-ei-u&theme=tokyonight" alt="Streak" />
+</p>
+
+---
+
 ## 🚀 About Me
-- 🎓 Student at Rwanda Coding Academy  
-- 💻 Fullstack Developer (HTML, CSS, PHP, JavaScript, Node.js, MongoDB)  
-- 🔐 Interested in Cybersecurity & SOC Analysis  
-- 🌱 Currently improving Backend Architecture & Security Skills  
-
----
-
-## 🛠️ Tech Stack
-- 💻 HTML | CSS | JavaScript  
-- 🖥️ PHP | Node.js | React.js
-- 🗄️ MySQL | MongoDB  
-- 🔧 Git & GitHub  
-
----
-
-## 📊 GitHub Stats
-
-![Albert's GitHub stats](https://github-readme-stats.vercel.app/api?username=Albert-ei-u&show_icons=true&theme=tokyonight)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Albert-ei-u&layout=compact&theme=tokyonight)
-
-![Streak](https://streak-stats.demolab.com?user=Albert-ei-u&theme=tokyonight)
+- 🎓 Student at **Rwanda Coding Academy**  
+- 💻 **Fullstack Developer**: Proficient in building scalable web applications.  
+- 🔐 **Cybersecurity Enthusiast**: Interested in SOC Analysis and Pen Testing.  
+- 🌱 **Learning**: Currently mastering Backend Architecture and Advanced Security.  
 
 ---
 
 ## 🏆 GitHub Trophies
-
-![trophy](https://github-profile-trophy.vercel.app/?username=Albert-ei-u&theme=algolia)
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app" alt="trophy" />
+</p>
 
 ---
 
-## 📈 Contribution Graph
+## 🛠️ Technology Stack
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Albert-ei-u&theme=tokyo-night)
+### 🌐 Frontend & Backend
+![HTML5](https://img.shields.io) ![CSS3](https://img.shields.io) ![JavaScript](https://img.shields.io) ![React](https://img.shields.io) ![PHP](https://img.shields.io) ![NodeJS](https://img.shields.io)
+
+### 🗄️ Database & Tools
+![MySQL](https://img.shields.io) ![MongoDB](https://img.shields.io) ![Git](https://img.shields.io) ![GitHub](https://img.shields.io)
+
+---
+
+## 🤝 Connect With Me
+<p align="left">
+<a href="https://linkedin.com" target="blank"><img align="center" src="https://raw.githubusercontent.com" alt="Albert" height="30" width="40" /></a>
+<a href="https://instagram.com" target="blank"><img align="center" src="https://raw.githubusercontent.com" alt="Albert" height="30" width="40" /></a>
+</p>
