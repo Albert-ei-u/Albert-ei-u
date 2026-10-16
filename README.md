@@ -1,5 +1,5 @@
 # 💫 About Me:
-Hi 👋, I'm Albert<br>Fullstack Developer | SOC Analyst | Pen Tester
+Hi 👋, I'm Albert<br>Fullstack Developer | SOC Analyst | Pen Tester | Project Manager | Software Engineer
 
 
 ## 🌐 Socials:
