@@ -1,0 +1,26 @@
+name: GitHub Profile Language Analytics
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs automatically every day at midnight
+  workflow_dispatch: # Lets you start it manually anytime
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Generate Language Stats
+        uses: actions/github-profile-language-analytics@v1.1.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@://github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Update language statistics"
+          git push
