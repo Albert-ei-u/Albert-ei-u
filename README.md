@@ -1,5 +1,5 @@
 # 👋 Who I Am:
-👋 Hi, I'm Albert — a student developer from Rwanda exploring software engineering, backend development, and emerging technologies.<br><br>- 💻 Backend development & API engineering<br>- 🔗 Blockchain, Web3 & mining concepts<br>- 🤖 AI, embedded systems & electronics<br>- 🌐 Networking & cybersecurity<br>- 🚀 Learning by building practical projects
+👋 Hi, I'm Albert — a student developer from Rwanda exploring software engineering, backend development, and emerging technologies.<br><br>• 💻 Backend development & API engineering<br>• 🔗 Blockchain, Web3 & mining concepts<br>• 🤖 AI, embedded systems & electronics<br>• 🌐 Networking & cybersecurity<br>• 🚀 Learning by building practical projects
 
 
 ## 🤝 Connect With Me:
