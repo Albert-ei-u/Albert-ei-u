@@ -5,6 +5,9 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write # This fixes the failure by allowing the bot to save the card
+
 jobs:
   update-stats:
     runs-on: ubuntu-latest
@@ -21,7 +24,7 @@ jobs:
             -d '{"query": "query { viewer { repositories(first: 100, ownerAffiliations: OWNER, isFork: false) { nodes { languages(first: 10, orderBy: {field: SIZE, direction: DESC}) { edges { size node { name color } } } } } } }"}' \
             https://github.com > raw_data.json
 
-          # 2. Compile percentages using built-in node script
+          # 2. Compile percentages and design the exact layout look
           node -e "
           const fs = require('fs');
           try {
@@ -47,23 +50,43 @@ jobs:
             }
 
             const sorted = Object.entries(langs)
-              .sort((a, b) => b[1].size - a[1].size)
+              .sort((a, b) => b.size - a.size)
               .slice(0, 6);
 
-            let svg = \`<svg xmlns='http://w3.org' width='350' height='180' viewBox='0 0 350 180'>
-              <rect width='100%' height='100%' rx='10' fill='#0d1117' stroke='#30363d' stroke-width='1'/>
-              <text x='20' y='30' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='600' font-size='16' fill='#58a6ff'>Most Used Languages</text>\`;
+            // Start building the SVG card matching your image layout
+            let svg = \`<svg xmlns='http://w3.org' width='450' height='160' viewBox='0 0 450 160'>
+              <rect width='100%' height='100%' rx='6' fill='#0d1117' stroke='#30363d' stroke-width='1'/>
+              <text x='25' y='35' font-family='Segoe UI, Ubuntu, sans-serif' font-weight='600' font-size='16' fill='#58a6ff'>Most Used Languages</text>\`;
 
-            let y = 60;
+            // Draw the top horizontal progress bar
+            let currentX = 25;
+            const barWidth = 400;
             sorted.forEach(([name, data]) => {
-              const pct = ((data.size / totalSize) * 100).toFixed(1);
+              const pct = data.size / totalSize;
+              const w = pct * barWidth;
+              if (w > 0.5) {
+                svg += \`<rect x='\${currentX}' y='55' width='\${w}' height='10' fill='\${data.color}'/>\`;
+                currentX += w;
+              }
+            });
+
+            // Draw the two-column grid items underneath
+            let itemX = 25;
+            let itemY = 95;
+            sorted.forEach(([name, data], index) => {
+              const pct = ((data.size / totalSize) * 100).toFixed(2);
+              
+              if (index === 3) {
+                itemX = 230; // Move to the second column
+                itemY = 95;
+              }
+
               svg += \`
-                <circle cx='30' cy='\${y-5}' r='6' fill='\${data.color}'/>
-                <text x='45' y='\${y}' font-family='Segoe UI, Ubuntu, sans-serif' font-size='14' fill='#c9d1d9'>\${name}</text>
-                <rect x='140' y='\${y-10}' width='120' height='8' rx='4' fill='#161b22'/>
-                <rect x='140' y='\${y-10}' width='\${1.2 * pct}' height='8' rx='4' fill='\${data.color}'/>
-                <text x='275' y='\${y}' font-family='Segoe UI, Ubuntu, sans-serif' font-size='12' fill='#8b949e'>\${pct}%</text>\`;
-              y += 22;
+                <circle cx='\${itemX + 6}' cy='\${itemY - 5}' r='5' fill='\${data.color}'/>
+                <text x='\${itemX + 20}' y='\${itemY}' font-family='Segoe UI, Ubuntu, sans-serif' font-size='13' font-weight='500' fill='#c9d1d9'>\${name}</text>
+                <text x='\${itemX + 110}' y='\${itemY}' font-family='Segoe UI, Ubuntu, sans-serif' font-size='13' fill='#8b949e'>\${pct}%</text>\`;
+              
+              itemY += 25;
             });
 
             svg += '</svg>';
