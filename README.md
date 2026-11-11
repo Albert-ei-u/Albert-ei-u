@@ -19,7 +19,7 @@
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
 
   ## 💰 support me
-  [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/acct_1UJUKHJFqeJ0acY0) 
+  ![](buymeacoffee.com/albert.ei.u)            
 
   
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
